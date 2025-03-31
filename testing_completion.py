@@ -1,6 +1,6 @@
-def fibonacci(n):
+def fibonacci(n, memo={}):
     """
-    Calculate the nth Fibonacci number using an iterative approach.
+    Calculate the nth Fibonacci number using an iterative approach with memoization.
     
     Args:
         n (int): The position in the Fibonacci sequence.
@@ -8,15 +8,19 @@ def fibonacci(n):
     Returns:
         int: The nth Fibonacci number.
     """
-    result = 0
-    a, b = 0, 1
-    for i in range(n + 1):
-        result = a
-        a, b = b, a + b
-        print(f'{i}: {result}')
+    if n in memo:
+        return memo[n]
+    if n == 0:
+        result = 0
+    elif n == 1:
+        result = 1
+    else:
+        result = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+    memo[n] = result
     return result
 
-fibonacci(10)
+# Example usage
+print(fibonacci(10))
 
 def factorial(n):
     """

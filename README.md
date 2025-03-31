@@ -5,7 +5,7 @@ This project contains two functions to calculate the nth Fibonacci number and th
 ## Functions
 
 ### fibonacci(n)
-- **Description**: Calculates the nth Fibonacci number using an iterative approach.
+- **Description**: Calculates the nth Fibonacci number using an iterative approach with memoization.
 - **Parameters**:
   - `n` (int): The position in the Fibonacci sequence.
 - **Returns**:
